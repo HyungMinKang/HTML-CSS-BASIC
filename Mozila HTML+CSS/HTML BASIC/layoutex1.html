@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            width: 960px;
+            margin: 0 auto;
+        }
+        aside{
+            width:200px;
+            float: left;
+        }
+
+        article{
+            width:760px;
+            float:left;
+        }
+
+        section{
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Header</h1></header>
+    <nav><h1>Navigation</h1></nav>
+    <section>
+        <aside><h1>Aside</h1>
+            <p>자손의 position 속성에 absolute 키워드를 적용하면 부모는 height 속성을 사용한다.
+                자손의 position 속성에 absolute 키워드를 적용하면 부모의 position 속성에 relative 키워드를 적용합니다. 
+                자손에 float 속성을 적용하면 부모의 overflow 속성에 hidden 키워드를 적용합니다. 
+                </p>
+        </aside>
+        <article>
+            <h1>Article</h1>
+            <p>자손의 position 속성에 absolute 키워드를 적용하면 부모는 height 속성을 사용한다.
+                자손의 position 속성에 absolute 키워드를 적용하면 부모의 position 속성에 relative 키워드를 적용합니다. 
+                자손에 float 속성을 적용하면 부모의 overflow 속성에 hidden 키워드를 적용합니다. 
+                </p>
+        </article>
+    </section>
+    <footer><h1>Footer</h1></footer>
+</body>
+</html>

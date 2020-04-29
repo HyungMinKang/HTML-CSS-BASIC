@@ -1,0 +1,36 @@
+h1
+{
+    color: red;
+}
+a:link
+{
+    color: orange;
+    font-weight: bold;
+}
+.manythings
+{
+    font-size: 150%;
+    width: 
+}
+#onething
+{
+    color:green;
+    font-weight: bold;
+}
+*
+{
+    font-style: italic;
+}
+.box p
+{
+    color:blue;
+}
+.box p:first-child
+{
+    color:purple;
+    font-weight: bold;
+}
+h1, h2, .intro
+{
+    font-size: 200%;
+}

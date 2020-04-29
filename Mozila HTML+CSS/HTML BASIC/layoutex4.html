@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mobile Layout</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-
+    scale=1.0, user-scalable=no" />
+    <style>
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #main_header {
+            /* 배경지정 */
+            height: 45px;
+            background: url('header_background.png');
+
+            /* 위치선정 */
+            position: relative;
+            text-align: center;
+            line-height: 45px;
+
+        }
+
+        #main_header>h1 {
+            color: white;
+        }
+
+        #main_header>a,
+        #main_header>label {
+            position: absolute;
+            display: block;
+            height: 32px;
+        }
+
+        #main_header>a.left {
+            width: 62px;
+            left: 5x;
+            top: 7px;
+            background: url('sprites.png');
+            background-position: 0px 0px;
+            text-indent: -99999px;
+        }
+
+        #main_header>label.right {
+            width: 32px;
+            top: 7px;
+            right: 5px;
+            background: url('sprites.png');
+            background-position: -62px 0px;
+            text-indent: -99999px;
+        }
+
+        #toggle {
+            display: none;
+        }
+
+        #toggle+#wrap>#toggle_gnb_wrap {
+            display: none;
+        }
+
+        #toggle:checked+#wrap>#toggle_gnb_wrap {
+            display: block;
+        }
+
+        /* 레이아웃 색상 */
+        #toggle_gnb_wrap {
+            background: #363636;
+            padding: 15px;
+        }
+
+        #toggle_gnb {
+            background: #FFFFFF;
+            padding: 5px;
+        }
+
+        #toggle_gnb>ul {
+            overflow: hidden;
+        }
+
+        #toggle_gnb>ul>li {
+            width: 80px;
+            float: left;
+        }
+
+        #top_gnb {
+            overflow: hidden;
+            background: #B42111;
+            border-bottom: 1px solid black;
+        }
+
+        #top_gnb>div>a {
+            float: left;
+            width: 25%;
+
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            color: white;
+        }
+
+        #bottom_gnb {
+            display: table;
+            width: 100%;
+            border-bottom: 1px solid black;
+        }
+
+        #bottom_gnb>div {
+            display: table-cell;
+            position: relative;
+        }
+
+        #bottom_gnb>div>a {
+            display: block;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+
+        }
+
+        #bottom_gnb>div>a::before {
+            display: block;
+            position: absolute;
+            top: 9px;
+            left: -1px;
+            width: 1px;
+            height: 15px;
+            border-left: 1px solid black;
+            content: '';
+        }
+
+        #section_header { padding: 20px;}
+        #section_article{ padding: 10px;}
+
+        #main_footer{
+            padding: 10px;
+            border-top: 3px solid black;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input id="toggle" type="checkbox" />
+    <div id="wrap">
+        <header id="main_header">
+            <a class="left" href="#">Main</a>
+            <h1>Mobile</h1>
+            <label class="right" for="toggle">Toggle</label>
+        </header>
+        <div id="toggle_gnb_wrap">
+            <div id="toggle_gnb">
+                <ul>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav id="top_gnb">
+            <div><a href="#">버튼</a></div>
+            <div><a href="#">버튼</a></div>
+            <div><a href="#">버튼</a></div>
+            <div><a href="#">버튼</a></div>
+        </nav>
+        <nav id="bottom_gnb">
+            <div><a href="#">버튼</a></div>
+            <div><a href="#">버튼</a></div>
+            <div><a href="#">버튼</a></div>
+            <div><a href="#">버튼</a></div>
+            <div><a href="#">버튼</a></div>
+        </nav>
+        <section id="main_section">
+            <header id="section_header">
+                <h1>Lorem ipsum</h1>
+                <time>2012-12-09 -Birthday</time>
+            </header>
+            <article id="section_article">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut malesuada odio, quis fermentum
+                    felis. Nulla ullamcorper faucibus commodo. Aenean et eros ligula. Suspendisse egestas rhoncus urna,
+                    ut luctus arcu. Phasellus ut leo quis velit dignissim facilisis. Cras at vulputate orci, in varius
+                    mi. Ut blandit mauris ac erat sollicitudin, nec malesuada magna mattis. Proin porta sapien eget
+                    velit tempor, ut cursus purus convallis. Sed ullamcorper leo ex, a consequat ipsum malesuada vitae.
+                    Vestibulum auctor bibendum risus, vel euismod lorem molestie at. In nulla mauris, cursus ac
+                    ullamcorper eget, accumsan in turpis. Nullam molestie massa quis augue fermentum, ut gravida neque
+                    commodo.
+
+                    Sed maximus dolor eget mi lobortis suscipit. Donec in ex ut tortor bibendum congue a ac mauris.
+                    Phasellus ut ultrices sapien, eu porttitor dolor. Etiam in arcu nec lorem placerat tempus. Sed
+                    efficitur, diam ut ultrices vestibulum, mi neque finibus arcu, non cursus justo mauris in orci.
+                    Nulla tristique hendrerit ex ac posuere. Nunc ut ultrices risus. Nulla congue, lorem in egestas
+                    porta, lorem sapien pretium magna, non imperdiet massa mi eget sapien. Interdum et malesuada fames
+                    ac ante ipsum primis in faucibus. Proin scelerisque viverra nisi, vitae dapibus tortor. Sed viverra
+                    orci ac quam venenatis auctor. Maecenas a metus non diam fringilla commodo. Nunc non lectus sit amet
+                    erat suscipit faucibus aliquet a dolor.
+
+                    Vivamus eget tellus cursus, rhoncus elit finibus, lacinia magna. Aliquam euismod dictum turpis eu
+                    luctus. Nullam viverra est in ante suscipit convallis. Nunc in justo suscipit, eleifend nisl id,
+                    aliquet lectus. Pellentesque libero ipsum, tristique sit amet turpis at, convallis molestie nisi.
+                    Morbi sed faucibus quam. Fusce ut velit ac dolor faucibus viverra in sit amet arcu. Etiam vel est
+                    vestibulum, scelerisque nunc vel, ullamcorper nibh. Ut ornare, neque et varius molestie, diam justo
+                    dapibus dui, id porta velit tortor ac mi. Donec non tellus sed nibh euismod pellentesque vel sed
+                    quam. Sed at sapien a metus porttitor interdum at eget ligula. Sed pretium placerat turpis, et
+                    ultricies tortor malesuada a. Mauris efficitur ligula ut hendrerit rhoncus. Aenean ex massa, auctor
+                    sed elementum ut, sollicitudin vel ante.
+
+                    Aliquam gravida odio sed purus porta, non elementum ex volutpat. Etiam orci odio, cursus a viverra
+                    aliquam, mollis non ante. Integer at volutpat nunc. Praesent eget sem vel enim pretium imperdiet et
+                    eget nisi. Morbi ullamcorper eros in malesuada tempor. Orci varius natoque penatibus et magnis dis
+                    parturient montes, nascetur ridiculus mus. Nulla euismod consequat dignissim. Duis id lorem vel
+                    lacus cursus dapibus. Cras vitae consectetur mi. Vestibulum ante ipsum primis in faucibus orci
+                    luctus et ultrices posuere cubilia Curae; Morbi a volutpat metus. Pellentesque risus ipsum, mollis a
+                    ultricies at, faucibus vitae elit. Proin ut augue porta, tincidunt ante in, suscipit dui.
+
+                    Donec est arcu, pulvinar at mi a, sollicitudin pulvinar enim. Phasellus sit amet eros augue. Integer
+                    at turpis blandit, commodo nisl sit amet, egestas justo. Morbi arcu massa, suscipit vitae nisi ut,
+                    fringilla posuere ex. Proin imperdiet dignissim nisi id dictum. Maecenas et tellus malesuada,
+                    hendrerit arcu eu, semper quam. Aenean tincidunt, arcu ut lobortis sagittis, metus mauris tincidunt
+                    ex, ac luctus ligula dui in nisi. Vivamus egestas ac augue pharetra malesuada. Vestibulum ante ipsum
+                    primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur eget nisl tortor. Nam
+                    ultricies convallis nisi id pretium. Nam fermentum, elit eget aliquam interdum, dui quam semper
+                    risus, ut rhoncus elit massa nec velit. Praesent a porttitor massa.</p>
+                <br />
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut malesuada odio, quis fermentum
+                    felis. Nulla ullamcorper faucibus commodo. Aenean et eros ligula. Suspendisse egestas rhoncus urna,
+                    ut luctus arcu. Phasellus ut leo quis velit dignissim facilisis. Cras at vulputate orci, in varius
+                    mi. Ut blandit mauris ac erat sollicitudin, nec malesuada magna mattis. Proin porta sapien eget
+                    velit tempor, ut cursus purus convallis. Sed ullamcorper leo ex, a consequat ipsum malesuada vitae.
+                    Vestibulum auctor bibendum risus, vel euismod lorem molestie at. In nulla mauris, cursus ac
+                    ullamcorper eget, accumsan in turpis. Nullam molestie massa quis augue fermentum, ut gravida neque
+                    commodo.
+
+                    Sed maximus dolor eget mi lobortis suscipit. Donec in ex ut tortor bibendum congue a ac mauris.
+                    Phasellus ut ultrices sapien, eu porttitor dolor. Etiam in arcu nec lorem placerat tempus. Sed
+                    efficitur, diam ut ultrices vestibulum, mi neque finibus arcu, non cursus justo mauris in orci.
+                    Nulla tristique hendrerit ex ac posuere. Nunc ut ultrices risus. Nulla congue, lorem in egestas
+                    porta, lorem sapien pretium magna, non imperdiet massa mi eget sapien. Interdum et malesuada fames
+                    ac ante ipsum primis in faucibus. Proin scelerisque viverra nisi, vitae dapibus tortor. Sed viverra
+                    orci ac quam venenatis auctor. Maecenas a metus non diam fringilla commodo. Nunc non lectus sit amet
+                    erat suscipit faucibus aliquet a dolor.
+
+                    Vivamus eget tellus cursus, rhoncus elit finibus, lacinia magna. Aliquam euismod dictum turpis eu
+                    luctus. Nullam viverra est in ante suscipit convallis. Nunc in justo suscipit, eleifend nisl id,
+                    aliquet lectus. Pellentesque libero ipsum, tristique sit amet turpis at, convallis molestie nisi.
+                    Morbi sed faucibus quam. Fusce ut velit ac dolor faucibus viverra in sit amet arcu. Etiam vel est
+                    vestibulum, scelerisque nunc vel, ullamcorper nibh. Ut ornare, neque et varius molestie, diam justo
+                    dapibus dui, id porta velit tortor ac mi. Donec non tellus sed nibh euismod pellentesque vel sed
+                    quam. Sed at sapien a metus porttitor interdum at eget ligula. Sed pretium placerat turpis, et
+                    ultricies tortor malesuada a. Mauris efficitur ligula ut hendrerit rhoncus. Aenean ex massa, auctor
+                    sed elementum ut, sollicitudin vel ante.
+
+                    Aliquam gravida odio sed purus porta, non elementum ex volutpat. Etiam orci odio, cursus a viverra
+                    aliquam, mollis non ante. Integer at volutpat nunc. Praesent eget sem vel enim pretium imperdiet et
+                    eget nisi. Morbi ullamcorper eros in malesuada tempor. Orci varius natoque penatibus et magnis dis
+                    parturient montes, nascetur ridiculus mus. Nulla euismod consequat dignissim. Duis id lorem vel
+                    lacus cursus dapibus. Cras vitae consectetur mi. Vestibulum ante ipsum primis in faucibus orci
+                    luctus et ultrices posuere cubilia Curae; Morbi a volutpat metus. Pellentesque risus ipsum, mollis a
+                    ultricies at, faucibus vitae elit. Proin ut augue porta, tincidunt ante in, suscipit dui.
+
+                    Donec est arcu, pulvinar at mi a, sollicitudin pulvinar enim. Phasellus sit amet eros augue. Integer
+                    at turpis blandit, commodo nisl sit amet, egestas justo. Morbi arcu massa, suscipit vitae nisi ut,
+                    fringilla posuere ex. Proin imperdiet dignissim nisi id dictum. Maecenas et tellus malesuada,
+                    hendrerit arcu eu, semper quam. Aenean tincidunt, arcu ut lobortis sagittis, metus mauris tincidunt
+                    ex, ac luctus ligula dui in nisi. Vivamus egestas ac augue pharetra malesuada. Vestibulum ante ipsum
+                    primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur eget nisl tortor. Nam
+                    ultricies convallis nisi id pretium. Nam fermentum, elit eget aliquam interdum, dui quam semper
+                    risus, ut rhoncus elit massa nec velit. Praesent a porttitor massa.</p>
+                <br />
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut malesuada odio, quis fermentum
+                    felis. Nulla ullamcorper faucibus commodo. Aenean et eros ligula. Suspendisse egestas rhoncus urna,
+                    ut luctus arcu. Phasellus ut leo quis velit dignissim facilisis. Cras at vulputate orci, in varius
+                    mi. Ut blandit mauris ac erat sollicitudin, nec malesuada magna mattis. Proin porta sapien eget
+                    velit tempor, ut cursus purus convallis. Sed ullamcorper leo ex, a consequat ipsum malesuada vitae.
+                    Vestibulum auctor bibendum risus, vel euismod lorem molestie at. In nulla mauris, cursus ac
+                    ullamcorper eget, accumsan in turpis. Nullam molestie massa quis augue fermentum, ut gravida neque
+                    commodo.
+
+                    Sed maximus dolor eget mi lobortis suscipit. Donec in ex ut tortor bibendum congue a ac mauris.
+                    Phasellus ut ultrices sapien, eu porttitor dolor. Etiam in arcu nec lorem placerat tempus. Sed
+                    efficitur, diam ut ultrices vestibulum, mi neque finibus arcu, non cursus justo mauris in orci.
+                    Nulla tristique hendrerit ex ac posuere. Nunc ut ultrices risus. Nulla congue, lorem in egestas
+                    porta, lorem sapien pretium magna, non imperdiet massa mi eget sapien. Interdum et malesuada fames
+                    ac ante ipsum primis in faucibus. Proin scelerisque viverra nisi, vitae dapibus tortor. Sed viverra
+                    orci ac quam venenatis auctor. Maecenas a metus non diam fringilla commodo. Nunc non lectus sit amet
+                    erat suscipit faucibus aliquet a dolor.
+
+                    Vivamus eget tellus cursus, rhoncus elit finibus, lacinia magna. Aliquam euismod dictum turpis eu
+                    luctus. Nullam viverra est in ante suscipit convallis. Nunc in justo suscipit, eleifend nisl id,
+                    aliquet lectus. Pellentesque libero ipsum, tristique sit amet turpis at, convallis molestie nisi.
+                    Morbi sed faucibus quam. Fusce ut velit ac dolor faucibus viverra in sit amet arcu. Etiam vel est
+                    vestibulum, scelerisque nunc vel, ullamcorper nibh. Ut ornare, neque et varius molestie, diam justo
+                    dapibus dui, id porta velit tortor ac mi. Donec non tellus sed nibh euismod pellentesque vel sed
+                    quam. Sed at sapien a metus porttitor interdum at eget ligula. Sed pretium placerat turpis, et
+                    ultricies tortor malesuada a. Mauris efficitur ligula ut hendrerit rhoncus. Aenean ex massa, auctor
+                    sed elementum ut, sollicitudin vel ante.
+
+                    Aliquam gravida odio sed purus porta, non elementum ex volutpat. Etiam orci odio, cursus a viverra
+                    aliquam, mollis non ante. Integer at volutpat nunc. Praesent eget sem vel enim pretium imperdiet et
+                    eget nisi. Morbi ullamcorper eros in malesuada tempor. Orci varius natoque penatibus et magnis dis
+                    parturient montes, nascetur ridiculus mus. Nulla euismod consequat dignissim. Duis id lorem vel
+                    lacus cursus dapibus. Cras vitae consectetur mi. Vestibulum ante ipsum primis in faucibus orci
+                    luctus et ultrices posuere cubilia Curae; Morbi a volutpat metus. Pellentesque risus ipsum, mollis a
+                    ultricies at, faucibus vitae elit. Proin ut augue porta, tincidunt ante in, suscipit dui.
+
+                    Donec est arcu, pulvinar at mi a, sollicitudin pulvinar enim. Phasellus sit amet eros augue. Integer
+                    at turpis blandit, commodo nisl sit amet, egestas justo. Morbi arcu massa, suscipit vitae nisi ut,
+                    fringilla posuere ex. Proin imperdiet dignissim nisi id dictum. Maecenas et tellus malesuada,
+                    hendrerit arcu eu, semper quam. Aenean tincidunt, arcu ut lobortis sagittis, metus mauris tincidunt
+                    ex, ac luctus ligula dui in nisi. Vivamus egestas ac augue pharetra malesuada. Vestibulum ante ipsum
+                    primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur eget nisl tortor. Nam
+                    ultricies convallis nisi id pretium. Nam fermentum, elit eget aliquam interdum, dui quam semper
+                    risus, ut rhoncus elit massa nec velit. Praesent a porttitor massa.</p>
+
+            </article>
+        </section>
+        <footer id="main_footer">
+            <h3>HTML5 + CSS3 Basic</h3>
+            <address>Website Layout Basic</address>
+        </footer>
+    </div>
+</body>
+
+</html>
